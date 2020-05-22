@@ -1,0 +1,19 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to "Trivia!", '#', id: "logo" %>
+          <nav >
+            <ul class="nav navbar-nav navbar-right">
+              <li class = 'nav-item'>
+              <%= link_to "Home",root_path %></li>
+              <% if logged_in? %>
+                <li class = 'nav-item'><%= link_to "Log out", logout_path, method: "delete" %></li>
+                <li class = 'nav-item'><%= link_to "Profile", profile_path  %></li>
+            <% else %>
+              <li><%= link_to "Log in", login_path %></li>
+            <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
