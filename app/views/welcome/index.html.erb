@@ -10,7 +10,13 @@
         
         <%= link_to "Log in!", login_path, class: "btn btn-large btn-primary" %>
     <%else%>
+    <div class = "row">
         <%= link_to "Play Trivia!", 'questions/'+rand(1..Question.all.count).to_s, class: "btn btn-large btn-primary" %>
+    </div>
+    <div class = "row">
+        <%= link_to "Create a Question!", newQuestion_path, class: "btn btn-large btn-primary" %>
+    </div>
+    
     <%end%>
     
 </div>
