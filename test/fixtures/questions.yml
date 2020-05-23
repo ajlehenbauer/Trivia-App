@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  correct: MyString
+  wrong1: MyString
+  wrong2: MyString
+  wrong3: MyString
+
+two:
+  title: MyString
+  correct: MyString
+  wrong1: MyString
+  wrong2: MyString
+  wrong3: MyString

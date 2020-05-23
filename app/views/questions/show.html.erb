@@ -1,0 +1,37 @@
+<div class = "row">
+    
+    <%if params[:answer]=="correct" ||params[:answer]=="incorrect" %>
+        <div class = "col-md-6 col-md-offset-3 animated fadeOutUp delay-2s">
+    <%else%>
+        <div class = "col-md-6 col-md-offset-3 animated fadeInUp delay-2s">
+    <%end%>
+    
+        <h1 class ="center "><%= @question.title %></h1>
+            <form action=<%=@question%>>
+                <button type="submit" name ="answer" value = "correct" class ="col-md-10 col-md-offset-1 btn btn-primary">
+                <%=@question.correct%>
+                </button>
+                <button type="submit" name ="answer" value = "incorrect" class ="col-md-10 col-md-offset-1 btn btn-primary">
+                <%=@question.wrong1%>
+                </button>
+                <button type="submit" name ="answer" value = "incorrect" class ="col-md-10 col-md-offset-1 btn btn-primary">
+                <%=@question.wrong2%>
+                </button>
+                <button type="submit" name ="answer" value = "incorrect" class ="col-md-10 col-md-offset-1 btn btn-primary">
+                <%=@question.wrong3%>
+                </button>
+            </form>     
+    </div>
+    <%if params[:answer]=="correct"%>
+        <div class = "col-md-6 col-md-offset-3 animated fadeInUp delay-2s">
+            <h1 class ="center ">You got it!</h1>
+            <%= link_to "next",rand(1..Question.all.count).to_s, class:"col-md-10 col-md-offset-1 btn btn-primary" %>
+        </div>
+    <%end%>
+    <%if params[:answer]=="incorrect"%>
+    <div class = "col-md-6 col-md-offset-3 animated fadeInUp delay-2s">
+            <h1 class ="center ">:( that wasn't right</h1>
+                <%= link_to "next",rand(1..Question.all.count).to_s, class:"col-md-10 col-md-offset-1 btn btn-primary" %>
+        </div>
+    <%end%>
+</div>
