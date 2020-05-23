@@ -1,7 +1,16 @@
 <div class="center hero-unit">
-    <h2>Hello World</h2>
-    <p>
-        The time is now: <%= Time.now %>
-    </p>
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+    
+    <%if !logged_in?%>
+
+        <h2>Welcome to Trivia!</h2>
+        
+        <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+        
+        <h2>or</h2>
+        
+        <%= link_to "Log in!", login_path, class: "btn btn-large btn-primary" %>
+    <%else%>
+        <%= link_to "Play Trivia!", 'questions/'+rand(1..Question.all.count).to_s, class: "btn btn-large btn-primary" %>
+    <%end%>
+    
 </div>
