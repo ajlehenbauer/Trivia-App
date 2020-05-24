@@ -30,6 +30,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bootstrap-sass', '3.4.1'
 
+gem 'bootstrap', '~> 4.5.0'
+
+gem 'jquery-rails'
+
 gem 'bcrypt-ruby', '3.1.5'
 
 gem 'animate.css-rails', '~> 3.2.0'

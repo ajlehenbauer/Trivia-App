@@ -15,16 +15,10 @@ class QuestionsController < ApplicationController
       flash[:success] = "Question Added!"
       redirect_to :newQuestion
     else
-      flash[:danger] = "Question Not Added!"
-      redirect_to :newQuestion
+      render 'new'
     end
   end
 
-  def answer
-    @title = params[:id]
-   
-    
-  end
   def question_params
     params.require(:question).permit(:title, :correct, :wrong1, :wrong2, :wrong3)
   end

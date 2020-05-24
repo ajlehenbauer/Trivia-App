@@ -1,4 +1,4 @@
-@import "bootstrap-sprockets";
+//@import "rails-sprockets";
 @import "bootstrap";
 @import "animate";
 
@@ -18,15 +18,21 @@ html {
   textarea {
     resize: vertical;
   }
-  
+
   .center {
     text-align: center;
         h1{
             margin-bottom:10px;
         }
   }
-
-  bottom-buffer{
+  .top-buffer-large{
+    margin-top: 100px;
+  }
+  .top-buffer-xlarge{
+    margin-top: 200px;
+  }
+  .bottom-buffer{
+    
     margin-bottom: 15px;
   }
 
@@ -69,7 +75,42 @@ html {
     box-sizing:         border-box;
   }
  
-  
+  .overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .fade-red{
+    transition: background-color 10s ease;
+    background-color: #ed4758;
+  }
+  .fade-green{
+    transition: background-color 10s ease;
+    background-color: #92f77c;
+  }
+  .green-background{
+    
+    background-color: #4cd97d;
+    border-color:  #4cd97d;
+  }
+  .red-background{
+    
+    background-color: #d94c4c;
+    border-color:  #d94c4c;
+  }
+  .purple-background{
+    
+    background-color: #ac54f0;
+    border-color:  #ac54f0;
+  }
+  .yellow-background{
+    
+    background-color: #d9a14c;
+    border-color:  #d9a14c;
+  }
+  #92f77c
   .debug_dump {
     clear: both;
     float: left;
