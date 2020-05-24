@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:title, :correct, :wrong1, :wrong2, :wrong3)
+    params.require(:question).permit(:title, :correct, :wrong1, :wrong2, :wrong3, :creator)
   end
 
 end

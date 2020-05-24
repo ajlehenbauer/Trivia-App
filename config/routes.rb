@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   get 'questions/new'
-
   get 'sessions/new'
   get 'users/new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   root 'welcome#index'
-  match '/profile',    to: 'welcome#profile', via: 'get'
+  match '/about',    to: 'welcome#about', via: 'get'
   match '/signup',  to: 'users#new', via: 'get'
   match '/newQuestion', to: 'questions#new', via: 'get'
   match '/answer', to: 'questions#answer', via: 'get'

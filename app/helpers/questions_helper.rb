@@ -1,20 +1,15 @@
 module QuestionsHelper
     
-    def answer
-        session["answer"]
-    end
-
-    def answer_true
-        session["answer"]="true"
-    end
-    
-    def answered_question?
-        !@answer.blank?
-    end
-
-
-    def reset_question
-        session.delete("answer")
-    end
-
+    def increment_rep(username)
+        @q = User.find_by(name: username)
+        if !@q.nil?
+            if @q.reputation.nil?
+                @q.update_attribute(:reputation,10)
+            else
+                @q.update_attribute(:reputation,@q.reputation + 10)
+            end
+            @q.save
+        end
+        
+      end
 end
