@@ -12,8 +12,9 @@
                             </button>
                         </div>
                     </form>
-                    <%= link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wascorrect',
-                    :action => increment_rep(@question.creator), class:"purple-background col-md-10 col-md-offset-1 btn btn-primary" %>
+                    <%if current_user.name != @question.creator%>
+                        <%=link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wascorrect',:action => increment_rep(@question.creator), class:"purple-background col-md-10 col-md-offset-1 btn btn-primary" %>
+                    <%end%>
                 </div>
             </div>
         <%end%>
@@ -31,8 +32,9 @@
                             </button>
                         </div>
                     </form>
-                    <%= link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wascorrect',
-                    :action => increment_rep(@question.creator), class:"purple-background col-md-10 col-md-offset-1 btn btn-primary" %>
+                    <%if current_user.name != @question.creator%>
+                        <%= link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wascorrect', class:"purple-background col-md-10 col-md-offset-1 btn btn-primary" %>
+                    <%end%>
                 </div>
             </div>
         <%end%>
@@ -50,8 +52,9 @@
                             </button>
                         </div>
                     </form>
-                    <%= link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wasincorrect',
-                    :action => increment_rep(@question.creator), class:" green-background col-md-10 col-md-offset-1 btn btn-primary" %>
+                    <%if current_user.name != @question.creator%>
+                        <%= link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wasincorrect',:action => increment_rep(@question.creator), class:" green-background col-md-10 col-md-offset-1 btn btn-primary" %>
+                    <%end%>
                 </div>
             </div>
         <%end%>
@@ -69,8 +72,9 @@
                             </button>
                         </div>
                     </form>
-                    <%= link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wasincorrect',
-                    :action => increment_rep(@question.creator), class:" green-background col-md-10 col-md-offset-1 btn btn-primary" %>
+                    <%if current_user.name == @question.creator%>
+                        <%= link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wasincorrect', class:" green-background col-md-10 col-md-offset-1 btn btn-primary" %>
+                    <%end%>
                 </div>
             </div>
         <%end%>
