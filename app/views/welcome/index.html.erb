@@ -1,44 +1,47 @@
 
-
+<!--simple home page-->
 <div class="center">
     
     <div class = "col-sm-8 col-sm-offset-2 top-buffer-large">
-        
-            
-            
-                <%if !logged_in?%>
+           
+        <%if !logged_in?%>
 
-                    <div class = 'welcome-text bottom-buffer'>Welcome to Trivia!</div>
-                    <div class="panel-body">
+            <div class = 'welcome-text bottom-buffer'>Welcome to Trivia!</div>
+                <div class="panel-body">
 
-                        <%= link_to "Sign up now!", signup_path, class: "purple-background welcome-button btn btn-large btn-primary" %>
-                    
+                    <%= link_to "Sign up now!", signup_path, class: "purple-background welcome-button btn btn-large btn-primary" %>
+                
                     <h2>or</h2>
-                    
+                
                     <%= link_to "Log in!", login_path, class: "green-background welcome-button btn btn-large btn-primary" %>
-                <%else%>
-                    <div class = 'welcome-text bottom-buffer'>Welcome <%=current_user.name%>!</div>
-                    <div class="panel-body">
 
-                        <div class = "row bottom-buffer">
-                            <%= link_to "Play Trivia!", 'questions/'+rand(1..Question.all.count).to_s, class: "purple-background welcome-button btn btn-large btn-primary" %>
-                        </div>
-                        
-                        <div class = "row">
-                            <%= link_to "Create a Question!", newQuestion_path, class: "green-background welcome-button btn btn-large btn-primary" %>
-                        </div>
-                        <div class = "row top-buffer">
-                            <h1>Your Rep</h1>
-                        </div>
-                        <div class = "row welcome-text">
-                            <%if current_user.reputation.nil?%> 0<%end%> <%=current_user.reputation%>
-                        </div>
-                    
-                
-                
-                <%end%>
+                </div>
             </div>
-        </div>
-    </div>
-    
+
+        <%else%>
+
+            <div class = 'welcome-text bottom-buffer'>Welcome <%=current_user.name%>!</div>
+                <div class="panel-body">
+
+                    <div class = "row bottom-buffer">
+                        <%= link_to "Play Trivia!", 'questions/'+rand(1..Question.all.count).to_s, class: "purple-background welcome-button btn btn-large btn-primary" %>
+                    </div>
+                    
+                    <div class = "row">
+                        <%= link_to "Create a Question!", newQuestion_path, class: "green-background welcome-button btn btn-large btn-primary" %>
+                    </div>
+
+                    <div class = "row top-buffer">
+                        <h1>Your Rep</h1>
+                    </div>
+
+                    <div class = "row welcome-text">
+                        <%if current_user.reputation.nil?%> 0<%end%> <%=current_user.reputation%>
+                    </div>
+
+                </div>
+            </div>
+
+        <%end%> 
+    </div>  
 </div>

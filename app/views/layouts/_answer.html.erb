@@ -1,126 +1,128 @@
+<!--randomizes order of questions-->
+
 <%case rand(1..4)%>
     <%when 1%>
-        <form action=<%=@question%>>
-                    <div class = "row bottom-buffer">
-                        <button type="submit" name ="answer" value = "correct" 
-                                class ="green-background col-md-8 col-md-offset-2 btn btn-primary">
-                        <%=@question.correct%>
-                        </button>
-                    </div>
-                    <div class = "row bottom-buffer">
-                        <button type="submit" name ="answer" value = "incorrect" 
-                                class ="yellow-background col-md-8 col-md-offset-2 btn btn-primary">
-                        <%=@question.wrong1%>
-                        </button>
-                    </div>
-                    <%if @question.wrong2!= ""%>
-                        <div class = "row bottom-buffer">
-                            <button type="submit" name ="answer" value = "incorrect" 
-                                    class ="red-background col-md-8 col-md-offset-2 btn btn-primary">
-                            <%=@question.wrong2%>
-                            </button>
-                        </div>
-                    <%end%>
-                    <%if @question.wrong3!= ""%>
-                        <div class = "row bottom-buffer">
-                            <button type="submit" name ="answer" value = "incorrect" 
-                                    class ="purple-background col-md-8 col-md-offset-2 btn btn-primary">
-                            <%=@question.wrong3%>
-                            </button>
-                        </div>
-                    <%end%>
-                </form>   
+        <form>
+            <div class = "row bottom-buffer">
+                <button type="submit" name ="answer" value = "correct" 
+                        class ="green-background col-md-8 col-md-offset-2 btn btn-primary">
+                <%=@question.correct%>
+                </button>
+            </div>
+            <div class = "row bottom-buffer">
+                <button type="submit" name ="answer" value = "incorrect" 
+                        class ="yellow-background col-md-8 col-md-offset-2 btn btn-primary">
+                <%=@question.wrong1%>
+                </button>
+            </div>
+            <%if @question.wrong2!= ""%>
+                <div class = "row bottom-buffer">
+                    <button type="submit" name ="answer" value = "incorrect" 
+                            class ="red-background col-md-8 col-md-offset-2 btn btn-primary">
+                    <%=@question.wrong2%>
+                    </button>
+                </div>
+            <%end%>
+            <%if @question.wrong3!= ""%>
+                <div class = "row bottom-buffer">
+                    <button type="submit" name ="answer" value = "incorrect" 
+                            class ="purple-background col-md-8 col-md-offset-2 btn btn-primary">
+                    <%=@question.wrong3%>
+                    </button>
+                </div>
+            <%end%>
+        </form>
     <%when 2%>
-        <form action=<%=@question%>>
-                    <%if @question.wrong2!= ""%>
-                        <div class = "row bottom-buffer">
-                            <button type="submit" name ="answer" value = "incorrect" 
-                                    class ="green-background col-md-8 col-md-offset-2 btn btn-primary">
-                            <%=@question.wrong2%>
-                            </button>
-                        </div>
-                    <%end%>
-                    <div class = "row bottom-buffer">
-                        <button type="submit" name ="answer" value = "correct" 
-                                class ="yellow-background col-md-8 col-md-offset-2 btn btn-primary">
-                        <%=@question.correct%>
-                        </button>
-                    </div>
-                    <%if @question.wrong3!= ""%>
-                        <div class = "row bottom-buffer">
-                            <button type="submit" name ="answer" value = "incorrect" 
-                                    class ="red-background col-md-8 col-md-offset-2 btn btn-primary">
-                            <%=@question.wrong3%>
-                            </button>
-                        </div>
-                    <%end%>
-                    <div class = "row">
-                        <button type="submit" name ="answer" value = "incorrect" 
-                                class ="purple-background col-md-8 col-md-offset-2 btn btn-primary">
-                        <%=@question.wrong1%>
-                        </button>
-                    </div>
-                </form>   
+        <form>
+            <%if @question.wrong2!= ""%>
+                <div class = "row bottom-buffer">
+                    <button type="submit" name ="answer" value = "incorrect" 
+                            class ="green-background col-md-8 col-md-offset-2 btn btn-primary">
+                    <%=@question.wrong2%>
+                    </button>
+                </div>
+            <%end%>
+            <div class = "row bottom-buffer">
+                <button type="submit" name ="answer" value = "correct" 
+                        class ="yellow-background col-md-8 col-md-offset-2 btn btn-primary">
+                <%=@question.correct%>
+                </button>
+            </div>
+            <%if @question.wrong3!= ""%>
+                <div class = "row bottom-buffer">
+                    <button type="submit" name ="answer" value = "incorrect" 
+                            class ="red-background col-md-8 col-md-offset-2 btn btn-primary">
+                    <%=@question.wrong3%>
+                    </button>
+                </div>
+            <%end%>
+            <div class = "row">
+                <button type="submit" name ="answer" value = "incorrect" 
+                        class ="purple-background col-md-8 col-md-offset-2 btn btn-primary">
+                <%=@question.wrong1%>
+                </button>
+            </div>
+        </form>   
     <%when 3%>
-        <form action=<%=@question%>>
-                    <%if @question.wrong3!= ""%>
-                        <div class = "row bottom-buffer">
-                            <button type="submit" name ="answer" value = "incorrect" 
-                                    class ="green-background col-md-8 col-md-offset-2 btn btn-primary">
-                            <%=@question.wrong3%>
-                            </button>
-                        </div>
-                    <%end%>
-                    <%if @question.wrong2!= ""%>
-                        <div class = "row bottom-buffer">
-                            <button type="submit" name ="answer" value = "incorrect" 
-                                    class ="yellow-background col-md-8 col-md-offset-2 btn btn-primary">
-                            <%=@question.wrong2%>
-                            </button>
-                        </div>
-                    <%end%>
-                    <div class = "row bottom-buffer">
-                        <button type="submit" name ="answer" value = "correct" 
-                                class ="red-background col-md-8 col-md-offset-2 btn btn-primary">
-                        <%=@question.correct%>
-                        </button>
-                    </div>
-                    <div class = "row">
-                        <button type="submit" name ="answer" value = "incorrect" 
-                                class ="purple-background col-md-8 col-md-offset-2 btn btn-primary">
-                        <%=@question.wrong1%>
-                        </button>
-                    </div>
-                </form>   
+        <form >
+            <%if @question.wrong3!= ""%>
+                <div class = "row bottom-buffer">
+                    <button type="submit" name ="answer" value = "incorrect" 
+                            class ="green-background col-md-8 col-md-offset-2 btn btn-primary">
+                    <%=@question.wrong3%>
+                    </button>
+                </div>
+            <%end%>
+            <%if @question.wrong2!= ""%>
+                <div class = "row bottom-buffer">
+                    <button type="submit" name ="answer" value = "incorrect" 
+                            class ="yellow-background col-md-8 col-md-offset-2 btn btn-primary">
+                    <%=@question.wrong2%>
+                    </button>
+                </div>
+            <%end%>
+            <div class = "row bottom-buffer">
+                <button type="submit" name ="answer" value = "correct" 
+                        class ="red-background col-md-8 col-md-offset-2 btn btn-primary">
+                <%=@question.correct%>
+                </button>
+            </div>
+            <div class = "row">
+                <button type="submit" name ="answer" value = "incorrect" 
+                        class ="purple-background col-md-8 col-md-offset-2 btn btn-primary">
+                <%=@question.wrong1%>
+                </button>
+            </div>
+        </form>   
     <%else%>
-        <form action=<%=@question%>>
-                    <%if @question.wrong2!= ""%>
-                        <div class = "row bottom-buffer">
-                            <button type="submit" name ="answer" value = "incorrect" 
-                                    class ="green-background col-md-8 col-md-offset-2 btn btn-primary">
-                            <%=@question.wrong2%>
-                            </button>
-                        </div>
-                    <%end%>
-                    <%if @question.wrong3!= ""%>
-                        <div class = "row bottom-buffer">
-                            <button type="submit" name ="answer" value = "incorrect" 
-                                    class ="yellow-background col-md-8 col-md-offset-2 btn btn-primary">
-                            <%=@question.wrong3%>
-                            </button>
-                        </div>
-                    <%end%>
-                    <div class = "row bottom-buffer">
-                        <button type="submit" name ="answer" value = "incorrect" 
-                                class ="red-background col-md-8 col-md-offset-2 btn btn-primary">
-                        <%=@question.wrong1%>
-                        </button>
-                    </div>
-                    <div class = "row">
-                        <button type="submit" name ="answer" value = "correct" 
-                                class ="purple-background col-md-8 col-md-offset-2 btn btn-primary">
-                        <%=@question.correct%>
-                        </button>
-                    </div>
-                </form>   
+        <form>
+            <%if @question.wrong2!= ""%>
+                <div class = "row bottom-buffer">
+                    <button type="submit" name ="answer" value = "incorrect" 
+                            class ="green-background col-md-8 col-md-offset-2 btn btn-primary">
+                    <%=@question.wrong2%>
+                    </button>
+                </div>
+            <%end%>
+            <%if @question.wrong3!= ""%>
+                <div class = "row bottom-buffer">
+                    <button type="submit" name ="answer" value = "incorrect" 
+                            class ="yellow-background col-md-8 col-md-offset-2 btn btn-primary">
+                    <%=@question.wrong3%>
+                    </button>
+                </div>
+            <%end%>
+            <div class = "row bottom-buffer">
+                <button type="submit" name ="answer" value = "incorrect" 
+                        class ="red-background col-md-8 col-md-offset-2 btn btn-primary">
+                <%=@question.wrong1%>
+                </button>
+            </div>
+            <div class = "row">
+                <button type="submit" name ="answer" value = "correct" 
+                        class ="purple-background col-md-8 col-md-offset-2 btn btn-primary">
+                <%=@question.correct%>
+                </button>
+            </div>
+        </form>   
 <%end%>

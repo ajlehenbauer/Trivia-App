@@ -1,5 +1,12 @@
 module QuestionsHelper
     
+    def question_creator
+        if @question.creator.nil?
+            return ""
+        end
+        @question.creator
+    end
+
     def increment_rep(username)
         @q = User.find_by(name: username)
         if !@q.nil? && username != current_user.name
