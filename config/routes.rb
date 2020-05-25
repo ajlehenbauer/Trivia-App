@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   root 'welcome#index'
   match '/about',    to: 'welcome#about', via: 'get'
-  match '/ranking', to: 'welcome#ranking', via: 'get'
+  match '/ranking', to: 'users#ranking', via: 'get'
 
   match '/signup',  to: 'users#new', via: 'get'
   match '/newQuestion', to: 'questions#new', via: 'get'

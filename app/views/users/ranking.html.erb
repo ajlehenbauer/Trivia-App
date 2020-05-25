@@ -1,0 +1,32 @@
+<!--simple rankings implementation-->
+<% provide(:title, 'Popular Writers') %>
+
+<div class = "center">
+  <div class = "row top-buffer bottom-buffer ranking-title">
+    Popular Users
+  </div>
+  <div class = 'row'>
+        <div class = 'top-user-bold bottom-buffer col-md-2 col-md-offset-4'>
+          Username
+        </div>
+        
+        <div class = 'top-user-bold bottom-buffer col-md-2'>
+          Rep
+        </div>
+      </div>
+  <%index_by_rep%>
+    <% @users.limit(10).each do |user| %>
+      <%if user.reputation !=0%>
+        <div class = 'row'>
+          <div class = 'top-user bottom-buffer col-md-2 col-md-offset-4'>
+            <%=user.name%>
+          </div>
+          
+          <div class = 'top-user bottom-buffer col-md-2'>
+            <%=user.reputation%>
+          </div>
+        </div>
+      <%end%>
+    <% end %>
+  
+</div>
