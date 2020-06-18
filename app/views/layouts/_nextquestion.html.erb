@@ -11,7 +11,7 @@
             <!--next question button-->
             <div class="row bottom-buffer">
             <!--this is probably not the best way to set params but I'm not sure how to do it properly with link_to-->
-                <%=link_to 'Next Question', rand(1..Question.all.count).to_s+'?answer=wascorrect&prev='+question_creator, 
+                <%=link_to 'Next Question', rand_id.to_s+'?answer=wascorrect&prev='+question_creator, 
                 class:"purple-background col-md-10 col-md-offset-1 btn btn-primary"%>
             </div>
             
@@ -19,7 +19,8 @@
             <div class="row bottom-buffer">
                 <!--cannot upvote your own question-->
                 <%if current_user.name != @question.creator%>
-                    <%=link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wascorrect&prev='+question_creator,
+                
+                    <%=link_to 'Upvote Question', rand_id.to_s+'?answer=wascorrect&prev='+question_creator,
                     action: increment_rep(@question.creator), 
                     class:"purple-background col-md-10 col-md-offset-1 btn btn-primary"%>
                 <%end%>
@@ -41,7 +42,7 @@
             </div>
             
             <div class="row bottom-buffer">
-                <%=link_to 'Next Question', rand(1..Question.all.count).to_s+'?answer=wascorrect', 
+                <%=link_to 'Next Question', rand_id.to_s+'?answer=wascorrect', 
                 class:"purple-background col-md-10 col-md-offset-1 btn btn-primary bottom-buffer" %>
             </div>
             
@@ -49,7 +50,7 @@
                 <!--since fade out is done in new question page
                 don't show upvote while fading out if user wrote previous question-->
                 <%if current_user.name != params[:prev]%>
-                    <%= link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wascorrect', 
+                    <%= link_to 'Upvote Question', rand_id.to_s+'?answer=wascorrect', 
                     class:"purple-background col-md-10 col-md-offset-1 btn btn-primary"%>
                 <%end%>
             </div>
@@ -67,13 +68,13 @@
             </div>
             
             <div class="row bottom-buffer">
-                <%=link_to 'Next Question', rand(1..Question.all.count).to_s+'?answer=wasincorrect&prev='+question_creator, 
+                <%=link_to 'Next Question', rand_id.to_s+'?answer=wasincorrect&prev='+question_creator, 
                 class:"purple-background col-md-10 col-md-offset-1 btn btn-primary bottom-buffer" %>
             </div>
             
             <div class="row bottom-buffer">
                 <%if current_user.name != @question.creator%>
-                    <%=link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wasincorrect&prev='+question_creator,
+                    <%=link_to 'Upvote Question', rand_id.to_s+'?answer=wasincorrect&prev='+question_creator,
                     action: increment_rep(@question.creator), 
                     class:"purple-background col-md-10 col-md-offset-1 btn btn-primary"%>
                 <%end%>
@@ -92,13 +93,13 @@
             </div> 
 
             <div class="row bottom-buffer">
-                <%=link_to 'Next Question', rand(1..Question.all.count).to_s+'?answer=wasincorrect', 
+                <%=link_to 'Next Question', rand_id.to_s+'?answer=wasincorrect', 
                 class:"purple-background col-md-10 col-md-offset-1 btn btn-primary bottom-buffer"%>
             </div>
 
             <div class="row bottom-buffer">
                 <%if current_user.name != params[:prev]%>
-                    <%= link_to 'Upvote Question', rand(1..Question.all.count).to_s+'?answer=wasincorrect', 
+                    <%= link_to 'Upvote Question', rand_id.to_s+'?answer=wasincorrect', 
                     class:"purple-background col-md-10 col-md-offset-1 btn btn-primary"%>
                 <%end%>
             </div>

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   match '/about',    to: 'welcome#about', via: 'get'
   match '/ranking', to: 'users#ranking', via: 'get'
 
+  match '/moderate', to: 'questions#all', via: 'get'
+
   match '/signup',  to: 'users#new', via: 'get'
   match '/newQuestion', to: 'questions#new', via: 'get'
   match '/answer', to: 'questions#answer', via: 'get'

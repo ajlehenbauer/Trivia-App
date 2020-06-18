@@ -1,0 +1,33 @@
+<!--simple rankings implementation-->
+<% provide(:title, 'Popular Writers') %>
+
+<div class = "center">
+  <div class = "row top-buffer bottom-buffer ranking-title">
+    All questions
+  </div>
+  <div class = 'row'>
+        <div class = 'top-user-bold bottom-buffer col-md-2 col-md-offset-4'>
+          Question
+        </div>
+        
+        <div class = 'top-user-bold bottom-buffer col-md-2'>
+          Delete
+        </div>
+      </div>
+  <%get_all%>
+    <% @questions.each do |question| %>
+        <div class = 'row'>
+          <div class = 'top-user bottom-buffer col-md-2 col-md-offset-4'>
+            <%=question.id%>
+          </div>
+          
+          <div class = 'top-user bottom-buffer col-md-2'>
+          <%= link_to "X", question, method: :delete,
+                                  data: { confirm: "You sure?" } , class: "red-background btn btn-primary"%>
+            
+          </div>
+        </div>
+      
+    <% end %>
+  
+</div>
